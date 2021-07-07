@@ -48,11 +48,13 @@ class Manifesto extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-                <div className="manifesto">
-                    <h2>{this.state.title}</h2>
+              <div className="manifesto">
+                <div className="container">
+                    <h2 className="title">{this.state.title}</h2>
                     <p className="description">{this.state.description}</p>
                     <p className="signature">{this.state.signature}</p>
                 </div>
+              </div>
             )
         }
     }

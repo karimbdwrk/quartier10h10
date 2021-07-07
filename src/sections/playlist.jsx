@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 
-class Header extends React.Component {
+class Playlist extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: null,
-        logo: '',
-        navigation: []
+        title: '',
+        description: '',
+        link: ''
       };
     }
   
     componentDidMount() {
-      fetch("https://quartier10h10-admin.herokuapp.com/header")
+      fetch("https://quartier10h10-admin.herokuapp.com/playlist")
         .then(res => res.json())
         .then(
           (result) => {
             console.log(result)
             this.setState({
               isLoaded: true,
-              logo: result.Logo.url,
-              navigation: result.Navigation
+              title: result.Title,
+              description: result.Description,
+              link: result.Spotify_Link
             });
 
           },
@@ -37,7 +39,7 @@ class Header extends React.Component {
   
     render() {
 
-        console.log(this.state.navigation)
+        console.log(this.state.skills)
 
         const { error, isLoaded, items } = this.state;
         if (error) {
@@ -46,24 +48,20 @@ class Header extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-                <header>
-                  <div className="container">
-                    <img src={this.state.logo} className="logo" />
-                    <nav className="nav">
-                        { this.state.navigation.Nav_Link.map((navlink, index) => {
-                        return (
-                            <a href={navlink.Link} key={index}>
-                                {navlink.Title}
-                            </a>
-                            )
-                        }) 
-                        }
-                    </nav>
-                  </div>
-                </header>
+                <div className="playlist">
+                    <div className="container">
+                        <div className="txt">
+                            <h2 className="title">{this.state.title}</h2>
+                            <p className="description">{this.state.description}</p>
+                        </div>
+                        <div className="lecteur">
+                            <iframe src={this.state.link} width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                </div>
             )
         }
     }
 }
 
-export default Header
+export default Playlist
