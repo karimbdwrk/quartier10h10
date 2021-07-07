@@ -1,0 +1,19 @@
+body {
+    background-color: #101010;
+
+    header {
+        height: 90px;
+        display: flex;
+        flex-direction: row;
+
+        .logo {
+
+        }
+
+        .nav {
+            a {
+                color: #F7F7F7;
+            }
+        }
+    }
+}
