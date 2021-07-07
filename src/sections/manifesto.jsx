@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 
-class Header extends React.Component {
+class Manifesto extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: null,
-        logo: '',
-        navigation: []
+        title: '',
+        description: '',
+        signature: ''
       };
     }
   
     componentDidMount() {
-      fetch("https://quartier10h10-admin.herokuapp.com/header")
+      fetch("https://quartier10h10-admin.herokuapp.com/mentale")
         .then(res => res.json())
         .then(
           (result) => {
             console.log(result)
             this.setState({
               isLoaded: true,
-              logo: result.Logo.url,
-              navigation: result.Navigation
+              title: result.title,
+              description: result.description,
+              signature: result.signature
             });
 
           },
@@ -37,7 +39,7 @@ class Header extends React.Component {
   
     render() {
 
-        console.log(this.state.navigation)
+        console.log(this.state)
 
         const { error, isLoaded, items } = this.state;
         if (error) {
@@ -46,22 +48,14 @@ class Header extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-                <header>
-                    <img src={this.state.logo} className="logo" />
-                    <nav className="nav">
-                        { this.state.navigation.Nav_Link.map((navlink, index) => {
-                        return (
-                            <a href={navlink.Link} key={index}>
-                                {navlink.Title}
-                            </a>
-                            )
-                        }) 
-                        }
-                    </nav>
-                </header>
+                <div className="manifesto">
+                    <h2>{this.state.title}</h2>
+                    <p className="description">{this.state.description}</p>
+                    <p className="signature">{this.state.signature}</p>
+                </div>
             )
         }
     }
 }
 
-export default Header
+export default Manifesto

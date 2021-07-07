@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 
-class Header extends React.Component {
+class Hero extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: null,
-        logo: '',
-        navigation: []
+        description: ''
       };
     }
   
     componentDidMount() {
-      fetch("https://quartier10h10-admin.herokuapp.com/header")
+      fetch("https://quartier10h10-admin.herokuapp.com/hero")
         .then(res => res.json())
         .then(
           (result) => {
             console.log(result)
             this.setState({
               isLoaded: true,
-              logo: result.Logo.url,
-              navigation: result.Navigation
+              description: result.description
             });
 
           },
@@ -37,7 +35,7 @@ class Header extends React.Component {
   
     render() {
 
-        console.log(this.state.navigation)
+        console.log(this.state)
 
         const { error, isLoaded, items } = this.state;
         if (error) {
@@ -46,22 +44,12 @@ class Header extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-                <header>
-                    <img src={this.state.logo} className="logo" />
-                    <nav className="nav">
-                        { this.state.navigation.Nav_Link.map((navlink, index) => {
-                        return (
-                            <a href={navlink.Link} key={index}>
-                                {navlink.Title}
-                            </a>
-                            )
-                        }) 
-                        }
-                    </nav>
-                </header>
+                <div className="hero">
+                    <p className="description">{this.state.description}</p>
+                </div>
             )
         }
     }
 }
 
-export default Header
+export default Hero
