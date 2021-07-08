@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'markdown-to-jsx'
 
 class Hero extends React.Component {
     constructor(props) {
@@ -47,9 +47,7 @@ class Hero extends React.Component {
             return (
               <div className="hero">
                 <div className="container">
-                  <div className="description">
-                    <ReactMarkdown source={this.state.description} />
-                  </div>
+                  <Markdown className="description">{this.state.description}</Markdown>
                   {/* <p className="description">{this.state.description}</p> */}
                 </div>
               </div>

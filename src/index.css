@@ -63,6 +63,10 @@ body {
 .App .hero .container .description {
   font-size: 64px;
 }
+.App .hero .container .description p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .App .manifesto {
   padding: 30px 0;
   height: 100vh;
