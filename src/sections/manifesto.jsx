@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Markdown from 'markdown-to-jsx'
 
 class Manifesto extends React.Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class Manifesto extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               title: result.title,
@@ -39,8 +39,6 @@ class Manifesto extends React.Component {
   
     render() {
 
-        console.log(this.state)
-
         const { error, isLoaded, items } = this.state;
         if (error) {
             return <div>Erreur : {error.message}</div>;
@@ -51,7 +49,7 @@ class Manifesto extends React.Component {
               <div className="manifesto">
                 <div className="container">
                     <h2 className="title">{this.state.title}</h2>
-                    <p className="description">{this.state.description}</p>
+                    <Markdown className="description">{this.state.description}</Markdown>
                     <p className="signature">{this.state.signature}</p>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Header extends React.Component {
     constructor(props) {
@@ -15,7 +15,6 @@ class Header extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               logo: result.Logo.url,
@@ -36,8 +35,6 @@ class Header extends React.Component {
     }
   
     render() {
-
-        console.log(this.state.navigation)
 
         const { error, isLoaded, items } = this.state;
         if (error) {

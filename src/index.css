@@ -56,7 +56,7 @@ body {
 }
 .App .hero {
   padding: 25vh 0;
-  height: 90vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
 }
@@ -77,10 +77,9 @@ body {
   font-size: 72px;
   margin-bottom: 90px;
 }
-.App .manifesto .container .description {
+.App .manifesto .container .description p {
   font-size: 24px;
-  width: 80%;
-  margin-bottom: 70px;
+  margin: 0;
 }
 .App .manifesto .container .hashtag {
   font-family: "Painted Brush";
@@ -98,6 +97,9 @@ body {
 .App .services .description {
   font-size: 24px;
   margin-bottom: 70px;
+}
+.App .services .description p {
+  margin: 0;
 }
 .App .services .skills {
   padding: 30px 0;
@@ -121,11 +123,20 @@ body {
 }
 .App .services .skills .skill .txt-container h3 {
   margin-top: 0;
+  margin-bottom: 15px;
   font-size: 34px;
   font-weight: 600;
 }
 .App .services .skills .skill .txt-container .description {
-  font-size: 22px;
+  padding-left: 0;
+}
+.App .services .skills .skill .txt-container .description li {
+  list-style: none;
+  font-size: 18px;
+}
+.App .services .skills .skill .txt-container .description p {
+  font-size: 18px;
+  margin: 0;
 }
 .App .playlist {
   width: 100%;
@@ -175,82 +186,78 @@ body {
   width: 100%;
   height: 72px;
 }
-.App .contact .container div {
+.App .contact .container > div {
   display: flex;
   flex-direction: row;
 }
-.App .contact .container div .contact-form {
+.App .contact .container > div .contact-form {
   width: 50%;
 }
-.App .contact .container div .contact-form form {
-  display: flex;
-  flex-direction: column;
+.App .contact .container > div .contact-form form {
+  width: 80%;
 }
-.App .contact .container div .contact-form form input, .App .contact .container div .contact-form form textarea {
+.App .contact .container > div .contact-form form .inputs {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.App .contact .container > div .contact-form form input, .App .contact .container > div .contact-form form textarea {
   background-color: transparent;
   border: 2px solid #F7F7F7;
   border-radius: 5px;
   padding: 5px 10px;
+  color: #F7F7F7;
 }
-.App .contact .container div .contact-form form input:focus, .App .contact .container div .contact-form form textarea:focus {
+.App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
   outline: none;
 }
-.App .contact .container div .contact-form form > div {
+.App .contact .container > div .contact-form form > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.App .contact .container div .contact-form form > div.textarea {
+.App .contact .container > div .contact-form form > div.textarea {
   flex-direction: column;
 }
-.App .contact .container div .contact-form form > div > div {
+.App .contact .container > div .contact-form form > div > div {
   width: calc(50% - 5px);
   display: flex;
   flex-direction: column;
 }
-.App .contact .container div .contact-form form > div > div input.name {
-  grid-area: name;
-  width: 100%;
-}
-.App .contact .container div .contact-form form > div > div input.email {
-  grid-area: email;
-  width: 100%;
-}
-.App .contact .container div .contact-form form textarea.message {
+.App .contact .container > div .contact-form form textarea.message {
   grid-area: message;
 }
-.App .contact .container div .contact-form form input.button {
+.App .contact .container > div .contact-form form input.button {
   grid-area: button;
 }
-.App .contact .container div .informations {
+.App .contact .container > div .informations {
   width: 50%;
   padding-left: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.App .contact .container div .informations div {
+.App .contact .container > div .informations div {
   display: flex;
   flex-direction: column;
 }
-.App .contact .container div .informations div .name_logo {
+.App .contact .container > div .informations div .name_logo {
   font-size: 28px;
   line-height: 28px;
 }
-.App .contact .container div .informations div .at {
+.App .contact .container > div .informations div .at {
   font-style: italic;
   margin-bottom: 15px;
 }
-.App .contact .container div .informations div .address {
+.App .contact .container > div .informations div .address {
   font-size: 18px;
 }
-.App .contact .container div .informations div .telephone {
+.App .contact .container > div .informations div .telephone {
   font-size: 18px;
 }
-.App .contact .container div .informations div .telephone_2 {
+.App .contact .container > div .informations div .telephone_2 {
   font-size: 18px;
 }
-.App .contact .container div .informations div .email {
+.App .contact .container > div .informations div .email {
   margin-top: 18px;
   font-size: 18px;
   text-decoration: underline;

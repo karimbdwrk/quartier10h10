@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Markdown from 'markdown-to-jsx'
 
 class Hero extends React.Component {
@@ -15,7 +15,6 @@ class Hero extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               description: result.description
@@ -35,8 +34,6 @@ class Hero extends React.Component {
     }
   
     render() {
-
-        console.log(this.state)
 
         const { error, isLoaded, items } = this.state;
         if (error) {

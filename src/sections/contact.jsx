@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ContactForm from '../components/contact-form';
 
 class Contact extends React.Component {
     constructor(props) {
@@ -18,7 +19,6 @@ class Contact extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               title: result.Title,
@@ -43,8 +43,6 @@ class Contact extends React.Component {
   
     render() {
 
-        console.log(this.state.telephone)
-
         const telephone = this.state.telephone.map(tel => <p key={tel.id} >{tel.Tel}</p>)
 
         const { error, isLoaded, items } = this.state;
@@ -58,7 +56,9 @@ class Contact extends React.Component {
                     <div className="container">
                         <h2 className="title">{this.state.title}</h2>
                         <div>
-                            <div className="contact-form"></div>
+                            <div className="contact-form">
+                              <ContactForm />
+                            </div>
                             <div className="informations">
                                 <div>
                                     <p>Quartier 10H10</p>

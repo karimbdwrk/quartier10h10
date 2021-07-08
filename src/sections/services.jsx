@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Markdown from 'markdown-to-jsx'
 
 class Services extends React.Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class Services extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               title: result.Title,
@@ -39,8 +39,6 @@ class Services extends React.Component {
   
     render() {
 
-        console.log(this.state.skills)
-
         const { error, isLoaded, items } = this.state;
         if (error) {
             return <div>Erreur : {error.message}</div>;
@@ -48,10 +46,10 @@ class Services extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-                <div className="services">
+                <div id="skills" className="services">
                     <div className="container">
                         <h2 className="title">{this.state.title}</h2>
-                        <p className="description">{this.state.description}</p>
+                        <Markdown className="description">{this.state.description}</Markdown>
                         <div className="skills">
                             {this.state.skills.Skill.map((skill) => 
                                 <div className="skill" key={skill.id}>
@@ -60,7 +58,7 @@ class Services extends React.Component {
                                     </div>
                                     <div className="txt-container">
                                         <h3>{skill.Title}</h3>
-                                        <div className="description">{skill.Description}</div>
+                                        <Markdown className="description">{skill.Description}</Markdown>
                                     </div>
                                 </div>
                             )}

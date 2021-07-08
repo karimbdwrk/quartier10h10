@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Playlist extends React.Component {
     constructor(props) {
@@ -16,7 +16,6 @@ class Playlist extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result)
             this.setState({
               isLoaded: true,
               title: result.Title,
@@ -38,8 +37,6 @@ class Playlist extends React.Component {
     }
   
     render() {
-
-        console.log(this.state.skills)
 
         const { error, isLoaded, items } = this.state;
         if (error) {

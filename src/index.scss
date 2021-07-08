@@ -68,7 +68,7 @@ body {
 
     .hero {
         padding: 25vh 0;
-        height: 90vh;
+        height: 50vh;
         display: flex;
         justify-content: center;
 
@@ -99,9 +99,12 @@ body {
                 margin-bottom: 90px;
             }
             .description {
-                font-size: 24px;
-                width: 80%;
-                margin-bottom: 70px;
+                p {
+                    font-size: 24px;
+                    // width: 80%;
+                    margin: 0;
+                    // margin-bottom: 70px;
+                }
             }
     
             .hashtag {
@@ -125,6 +128,10 @@ body {
         .description {
             font-size: 24px;
             margin-bottom: 70px;
+
+            p {
+                margin: 0;
+            }
         }
 
         .skills {
@@ -153,12 +160,22 @@ body {
         
                     h3 {
                         margin-top: 0;
+                        margin-bottom: 15px;
                         font-size: 34px;
                         font-weight: 600;
                     }
             
                     .description {
-                        font-size: 22px;
+                        padding-left: 0;
+                        li {
+                            list-style: none;
+                            font-size: 18px;
+                        }
+
+                        p {
+                            font-size: 18px;
+                            margin: 0;
+                        }
                     }
 
                 }
@@ -228,7 +245,7 @@ body {
                 height: 72px;
             }
 
-            div {
+            & > div {
                 display: flex;
                 flex-direction: row;
     
@@ -236,14 +253,19 @@ body {
                     width: 50%;
     
                     form {
-                        display: flex;
-                        flex-direction: column;
+                        width: 80%;
+
+                        .inputs {
+                            width: 100%;
+                            margin-bottom: 15px;
+                        }
             
                         input, textarea {
                             background-color: transparent;
                             border: 2px solid #F7F7F7;
                             border-radius: 5px;
                             padding: 5px 10px;
+                            color: #F7F7F7;
             
                             &:focus {
                                 outline: none;
@@ -265,13 +287,11 @@ body {
                                 flex-direction: column;
             
                                 input.name {
-                                    grid-area: name;
-                                    width: 100%;
+                                    // width: 100%;
                                 }
                     
                                 input.email {
-                                    grid-area: email;
-                                    width: 100%;
+                                    // width: 100%;
                                 }
                             }
                         }
