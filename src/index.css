@@ -62,10 +62,18 @@ body {
 }
 .App .hero .container .description {
   font-size: 64px;
+  font-weight: 300;
 }
 .App .hero .container .description p {
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: 200;
+}
+.App .hero .container .description strong {
+  font-weight: 500;
+}
+.App .hero .container .description em {
+  font-weight: 400;
 }
 .App .manifesto {
   padding: 30px 0;
@@ -76,12 +84,20 @@ body {
 .App .manifesto .container .title {
   font-size: 72px;
   margin-bottom: 90px;
+  font-weight: 500;
 }
 .App .manifesto .container .description p {
   font-size: 24px;
   margin: 0;
+  font-weight: 200;
 }
-.App .manifesto .container .hashtag {
+.App .manifesto .container .description strong {
+  font-weight: 500;
+}
+.App .manifesto .container .description em {
+  font-weight: 400;
+}
+.App .manifesto .container .signature {
   font-family: "Painted Brush";
   font-size: 72px;
 }
@@ -89,17 +105,26 @@ body {
   display: flex;
   justify-content: center;
 }
-.App .services .title {
+.App .services > .container > .title {
   font-size: 72px;
   margin-bottom: 90px;
   width: 100%;
+  font-weight: 500;
 }
-.App .services .description {
-  font-size: 24px;
+.App .services > .container > .description {
+  font-size: 22px;
   margin-bottom: 70px;
+  font-weight: 200;
 }
-.App .services .description p {
+.App .services > .container > .description p {
   margin: 0;
+  font-weight: 200;
+}
+.App .services > .container > .description strong {
+  font-weight: 500;
+}
+.App .services > .container > .description em {
+  font-weight: 400;
 }
 .App .services .skills {
   padding: 30px 0;
@@ -125,7 +150,7 @@ body {
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 34px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .App .services .skills .skill .txt-container .description {
   padding-left: 0;
@@ -133,10 +158,18 @@ body {
 .App .services .skills .skill .txt-container .description li {
   list-style: none;
   font-size: 18px;
+  font-weight: 200;
 }
 .App .services .skills .skill .txt-container .description p {
   font-size: 18px;
   margin: 0;
+  font-weight: 200;
+}
+.App .services .skills .skill .txt-container .description strong {
+  font-weight: 500;
+}
+.App .services .skills .skill .txt-container .description em {
+  font-weight: 400;
 }
 .App .playlist {
   width: 100%;
@@ -159,10 +192,18 @@ body {
   margin-bottom: 90px;
   margin-top: 0;
   width: 100%;
+  font-weight: 500;
 }
 .App .playlist .container div.txt .description {
   font-size: 22px;
   width: 80%;
+  font-weight: 200;
+}
+.App .playlist .container div.txt .description strong {
+  font-weight: 500;
+}
+.App .playlist .container div.txt .description em {
+  font-weight: 400;
 }
 .App .playlist .container div.lecteur {
   width: 34%;
@@ -185,6 +226,7 @@ body {
   margin-bottom: 90px;
   width: 100%;
   height: 72px;
+  font-weight: 500;
 }
 .App .contact .container > div {
   display: flex;
@@ -210,6 +252,13 @@ body {
 .App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
   outline: none;
 }
+.App .contact .container > div .contact-form form .sujet {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.App .contact .container > div .contact-form form .sujet input {
+  width: 100%;
+}
 .App .contact .container > div .contact-form form > div {
   display: flex;
   flex-direction: row;
@@ -217,17 +266,28 @@ body {
 }
 .App .contact .container > div .contact-form form > div.textarea {
   flex-direction: column;
+  margin-bottom: 15px;
 }
 .App .contact .container > div .contact-form form > div > div {
   width: calc(50% - 5px);
   display: flex;
   flex-direction: column;
 }
-.App .contact .container > div .contact-form form textarea.message {
-  grid-area: message;
+.App .contact .container > div .contact-form form button {
+  width: 100%;
+  padding: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #F7F7F7;
+  background-color: #101010;
+  border: 2px solid #F7F7F7;
+  border-radius: 5px;
+  letter-spacing: 1px;
 }
-.App .contact .container > div .contact-form form input.button {
-  grid-area: button;
+.App .contact .container > div .contact-form form button:hover {
+  cursor: pointer;
+  background-color: #F7F7F7;
+  color: #101010;
 }
 .App .contact .container > div .informations {
   width: 50%;
@@ -235,6 +295,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-weight: 200;
+}
+.App .contact .container > div .informations p {
+  margin: 0;
 }
 .App .contact .container > div .informations div {
   display: flex;
@@ -243,6 +307,7 @@ body {
 .App .contact .container > div .informations div .name_logo {
   font-size: 28px;
   line-height: 28px;
+  font-weight: 500;
 }
 .App .contact .container > div .informations div .at {
   font-style: italic;
@@ -250,6 +315,7 @@ body {
 }
 .App .contact .container > div .informations div .address {
   font-size: 18px;
+  font-weight: 300;
 }
 .App .contact .container > div .informations div .telephone {
   font-size: 18px;

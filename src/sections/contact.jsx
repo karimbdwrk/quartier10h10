@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx'
 import ContactForm from '../components/contact-form';
 
 class Contact extends React.Component {
@@ -43,7 +44,7 @@ class Contact extends React.Component {
   
     render() {
 
-        const telephone = this.state.telephone.map(tel => <p key={tel.id} >{tel.Tel}</p>)
+        const telephone = this.state.telephone.map(tel => <p key={tel.id} className="telephone">{tel.Tel}</p>)
 
         const { error, isLoaded, items } = this.state;
         if (error) {
@@ -61,13 +62,13 @@ class Contact extends React.Component {
                             </div>
                             <div className="informations">
                                 <div>
-                                    <p>Quartier 10H10</p>
-                                    <p>{this.state.at}</p>
-                                    <p>{this.state.address}</p>
+                                    <p className="name_logo">Quartier 10H10</p>
+                                    <p className="at">chez {this.state.at}</p>
+                                    <Markdown className="address">{this.state.address}</Markdown>
                                 </div>
                                 <div>
                                     {telephone}
-                                    <p>{this.state.email}</p>
+                                    <p className="email">{this.state.email}</p>
                                 </div>
                             </div>
                         </div>
