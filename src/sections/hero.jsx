@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Markdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
 
 class Hero extends React.Component {
     constructor(props) {
@@ -47,10 +47,10 @@ class Hero extends React.Component {
             return (
               <div className="hero">
                 <div className="container">
-                  {/* <div className="description">
-                    <Markdown source={this.state.description} />
-                  </div> */}
-                  <p className="description">{this.state.description}</p>
+                  <div className="description">
+                    <ReactMarkdown source={this.state.description} />
+                  </div>
+                  {/* <p className="description">{this.state.description}</p> */}
                 </div>
               </div>
             )
