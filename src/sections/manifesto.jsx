@@ -46,7 +46,7 @@ class Manifesto extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-              <div className="manifesto">
+              <div id="manifesto" className="manifesto">
                 <div className="container">
                     <h2 className="title">{this.state.title}</h2>
                     <Markdown className="description">{this.state.description}</Markdown>

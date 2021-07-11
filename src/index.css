@@ -248,6 +248,7 @@ body {
   border-radius: 5px;
   padding: 5px 10px;
   color: #F7F7F7;
+  font-family: "Poppins", sans-serif;
 }
 .App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
   outline: none;

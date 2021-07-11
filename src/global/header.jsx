@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll'
 
 class Header extends React.Component {
     constructor(props) {
@@ -49,9 +50,7 @@ class Header extends React.Component {
                     <nav className="nav">
                         { this.state.navigation.Nav_Link.map((navlink, index) => {
                         return (
-                            <a href={navlink.Link} key={index}>
-                                {navlink.Title}
-                            </a>
+                              <Link key={index} to={navlink.Link} spy={true} smooth={true}>{navlink.Title}</Link>
                             )
                         }) 
                         }
