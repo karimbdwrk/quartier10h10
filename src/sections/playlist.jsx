@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx'
 
 class Playlist extends React.Component {
     constructor(props) {
@@ -49,7 +50,7 @@ class Playlist extends React.Component {
                     <div className="container">
                         <div className="txt">
                             <h2 className="title">{this.state.title}</h2>
-                            <p className="description">{this.state.description}</p>
+                            <Markdown className="description">{this.state.description}</Markdown>
                         </div>
                         <div className="lecteur">
                             <iframe src={this.state.link} width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>

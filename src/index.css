@@ -199,6 +199,16 @@ body {
   width: 80%;
   font-weight: 200;
 }
+.App .playlist .container div.txt .description li {
+  list-style: none;
+  font-size: 20px;
+  font-weight: 200;
+}
+.App .playlist .container div.txt .description p {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 200;
+}
 .App .playlist .container div.txt .description strong {
   font-weight: 500;
 }
@@ -376,4 +386,84 @@ footer.footer .copyright .container {
 footer.footer .copyright .container p {
   font-size: 14px;
   font-weight: 300;
+}
+
+@media screen and (max-width: 425px) {
+  .App {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .App .hero {
+    padding: 20vh 0 10vh;
+  }
+  .App .hero .container .description {
+    font-size: 32px;
+  }
+  .App .manifesto {
+    padding: 30px 0;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+  }
+  .App .manifesto .container .title {
+    font-size: 38px;
+  }
+  .App .manifesto .container .description p {
+    font-size: 18px;
+  }
+  .App .manifesto .container .signature {
+    font-family: "Painted Brush";
+    font-size: 42px;
+  }
+  .App .services > .container > .title {
+    font-size: 38px;
+  }
+  .App .services > .container > .description {
+    font-size: 18px;
+  }
+  .App .services .skills {
+    padding: 30px 0;
+    height: 100vh;
+    width: 100%;
+  }
+  .App .services .skills .skill {
+    display: flex;
+    margin-bottom: 60px;
+  }
+  .App .services .skills .skill .icon-container {
+    width: 20%;
+  }
+  .App .services .skills .skill .icon-container img.icon {
+    max-height: 140px;
+    width: auto;
+  }
+  .App .services .skills .skill .txt-container {
+    width: 80%;
+    padding-left: 30px;
+  }
+  .App .services .skills .skill .txt-container h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 34px;
+    font-weight: 500;
+  }
+  .App .services .skills .skill .txt-container .description {
+    padding-left: 0;
+  }
+  .App .services .skills .skill .txt-container .description li {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .App .services .skills .skill .txt-container .description p {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 200;
+  }
+  .App .services .skills .skill .txt-container .description strong {
+    font-weight: 500;
+  }
+  .App .services .skills .skill .txt-container .description em {
+    font-weight: 400;
+  }
 }
