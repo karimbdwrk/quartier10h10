@@ -1,14 +1,30 @@
 import React from 'react';
 import { Link } from 'react-scroll'
 
+function handleClick(e) {
+    e.preventDefault();
+    console.log('Le lien a été cliqué.')
+}
+
 class Header extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: null,
         logo: '',
-        navigation: []
+        navigation: [],
+        toggleOpen: false
       };
+
+      // Cette liaison est nécéssaire afin de permettre
+      // l'utilisation de `this` dans la fonction de rappel.
+      this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+      this.setState(state => ({
+        toggleOpen: !state.toggleOpen
+      }));
     }
   
     componentDidMount() {
@@ -33,6 +49,7 @@ class Header extends React.Component {
             });
           }
         )
+      
     }
   
     render() {
@@ -46,8 +63,16 @@ class Header extends React.Component {
             return (
                 <header>
                   <div className="container">
-                    <img src={this.state.logo} className="logo" />
-                    <nav className="nav">
+                    <div className="logo">
+                        <img src={this.state.logo} />
+                        <button id="burger" onClick={this.handleClick} className={this.state.toggleOpen ? 'open' : ''}>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </button>
+                    </div>
+                    <nav className={this.state.toggleOpen ? 'nav open' : 'nav'}>
                         { this.state.navigation.Nav_Link.map((navlink, index) => {
                         return (
                               <Link key={index} to={navlink.Link} spy={true} smooth={true}>{navlink.Title}</Link>

@@ -32,9 +32,13 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.App header .container .logo {
+.App header .container .logo img {
   height: 50px;
   width: auto;
+  justify-content: flex-start;
+}
+.App header .container .logo #burger {
+  display: none;
 }
 .App header .container .nav {
   width: 66%;
@@ -393,6 +397,121 @@ footer.footer .copyright .container p {
     padding-left: 15px;
     padding-right: 15px;
   }
+  .App header {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .App header .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .App header .container .logo {
+    width: 100%;
+    padding-bottom: 30px;
+    background-color: #101010;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .App header .container .logo img {
+    height: 50px;
+    width: auto;
+    justify-content: flex-start;
+  }
+  .App header .container .logo #burger {
+    display: block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    margin-top: 15px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+  }
+  .App header .container .logo #burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #f7f7f7;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+  .App header .container .logo #burger span:nth-child(1) {
+    top: 0px;
+  }
+  .App header .container .logo #burger span:nth-child(2), .App header .container .logo #burger span:nth-child(3) {
+    top: 9px;
+  }
+  .App header .container .logo #burger span:nth-child(4) {
+    top: 18px;
+  }
+  .App header .container .logo #burger.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  .App header .container .logo #burger.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .App header .container .logo #burger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .App header .container .logo #burger.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  .App header .container .nav {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: 250ms ease-in-out;
+  }
+  .App header .container .nav.open {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .App header .container .nav a {
+    vertical-align: bottom;
+    font-size: 18px;
+    border-bottom: 0px solid transparent;
+    color: #F7F7F7;
+    text-decoration: none;
+  }
+  .App header .container .nav a:hover {
+    border-bottom: 0px solid #F7F7F7;
+  }
   .App .hero {
     padding: 20vh 0 10vh;
   }
@@ -407,9 +526,10 @@ footer.footer .copyright .container p {
   }
   .App .manifesto .container .title {
     font-size: 38px;
+    margin-bottom: 50px;
   }
   .App .manifesto .container .description p {
-    font-size: 18px;
+    font-size: 16px;
   }
   .App .manifesto .container .signature {
     font-family: "Painted Brush";
@@ -417,9 +537,10 @@ footer.footer .copyright .container p {
   }
   .App .services > .container > .title {
     font-size: 38px;
+    margin-bottom: 50px;
   }
   .App .services > .container > .description {
-    font-size: 18px;
+    font-size: 16px;
   }
   .App .services .skills {
     padding: 30px 0;
@@ -431,20 +552,20 @@ footer.footer .copyright .container p {
     margin-bottom: 60px;
   }
   .App .services .skills .skill .icon-container {
-    width: 20%;
+    width: 10%;
   }
   .App .services .skills .skill .icon-container img.icon {
-    max-height: 140px;
+    max-height: 50px;
     width: auto;
   }
   .App .services .skills .skill .txt-container {
-    width: 80%;
+    width: 90%;
     padding-left: 30px;
   }
   .App .services .skills .skill .txt-container h3 {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 34px;
+    font-size: 24px;
     font-weight: 500;
   }
   .App .services .skills .skill .txt-container .description {
@@ -452,11 +573,11 @@ footer.footer .copyright .container p {
   }
   .App .services .skills .skill .txt-container .description li {
     list-style: none;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 200;
   }
   .App .services .skills .skill .txt-container .description p {
-    font-size: 18px;
+    font-size: 14px;
     margin: 0;
     font-weight: 200;
   }
@@ -465,5 +586,179 @@ footer.footer .copyright .container p {
   }
   .App .services .skills .skill .txt-container .description em {
     font-weight: 400;
+  }
+  .App .playlist {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .App .playlist .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .playlist .container div.txt {
+    width: 100%;
+  }
+  .App .playlist .container div.txt .title {
+    font-size: 38px;
+    margin-bottom: 50px;
+    margin-top: 0;
+    width: 100%;
+    font-weight: 500;
+  }
+  .App .playlist .container div.txt .description {
+    font-size: 22px;
+    width: 100%;
+    font-weight: 200;
+  }
+  .App .playlist .container div.txt .description li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 200;
+  }
+  .App .playlist .container div.txt .description p {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 200;
+  }
+  .App .playlist .container div.txt .description strong {
+    font-weight: 500;
+  }
+  .App .playlist .container div.txt .description em {
+    font-weight: 400;
+  }
+  .App .playlist .container div.lecteur {
+    margin-top: 50px;
+    width: 100%;
+  }
+  .App .contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .App .contact .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .contact .container .title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 72px;
+    font-weight: 500;
+  }
+  .App .contact .container > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .contact .container > div .contact-form {
+    width: 100%;
+  }
+  .App .contact .container > div .contact-form form {
+    width: 100%;
+  }
+  .App .contact .container > div .contact-form form .inputs {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .App .contact .container > div .contact-form form input, .App .contact .container > div .contact-form form textarea {
+    background-color: transparent;
+    border: 2px solid #F7F7F7;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #F7F7F7;
+    font-family: "Poppins", sans-serif;
+  }
+  .App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
+    outline: none;
+  }
+  .App .contact .container > div .contact-form form .sujet {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .App .contact .container > div .contact-form form .sujet input {
+    width: 100%;
+  }
+  .App .contact .container > div .contact-form form > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .App .contact .container > div .contact-form form > div.textarea {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .App .contact .container > div .contact-form form > div > div {
+    width: calc(50% - 5px);
+    display: flex;
+    flex-direction: column;
+  }
+  .App .contact .container > div .contact-form form button {
+    width: 100%;
+    padding: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #F7F7F7;
+    background-color: #101010;
+    border: 2px solid #F7F7F7;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+  .App .contact .container > div .contact-form form button:hover {
+    cursor: pointer;
+    background-color: #F7F7F7;
+    color: #101010;
+  }
+  .App .contact .container > div .informations {
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 200;
+  }
+  .App .contact .container > div .informations p {
+    margin: 0;
+  }
+  .App .contact .container > div .informations div {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .contact .container > div .informations div:last-of-type {
+    margin-top: 50px;
+  }
+  .App .contact .container > div .informations div .name_logo {
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+  .App .contact .container > div .informations div .at {
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+  .App .contact .container > div .informations div .address {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+  .App .contact .container > div .informations div .telephone {
+    font-size: 18px;
+  }
+  .App .contact .container > div .informations div .telephone_2 {
+    font-size: 18px;
+  }
+  .App .contact .container > div .informations div .email {
+    margin-top: 18px;
+    font-size: 18px;
+    text-decoration: underline;
   }
 }
