@@ -99,7 +99,6 @@ body {
 }
 .App .manifesto {
   padding: 30px 0;
-  height: 70vh;
   display: flex;
   justify-content: center;
 }
@@ -122,6 +121,7 @@ body {
 .App .manifesto .container .signature {
   font-family: "Painted Brush";
   font-size: 72px;
+  margin-bottom: 0;
 }
 .App #banner {
   padding: 30px 0;
@@ -135,6 +135,7 @@ body {
 }
 .App #banner img {
   width: 100%;
+  max-width: 1000px;
   height: auto;
 }
 .App .services {

@@ -124,7 +124,7 @@ body {
 
     .manifesto {
         padding: 30px 0;
-        height: 70vh;
+        // height: 70vh;
         display: flex;
         justify-content: center;
 
@@ -157,6 +157,7 @@ body {
             .signature {
                 font-family: 'Painted Brush';
                 font-size: 72px;
+                margin-bottom: 0;
             }
 
         }
@@ -174,6 +175,7 @@ body {
 
         img {
             width: 100%;
+            max-width: 1000px;
             height: auto;
         }
     }
