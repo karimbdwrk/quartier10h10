@@ -470,7 +470,7 @@ footer.footer .copyright .container p {
   .App header .container .logo {
     width: 100%;
     padding-bottom: 30px;
-    background-color: #101010;
+    background-color: #000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -573,7 +573,23 @@ footer.footer .copyright .container p {
     border-bottom: 0px solid #F7F7F7;
   }
   .App .hero {
-    padding: 20vh 0 10vh;
+    padding: 0;
+    height: 50vh;
+  }
+  .App .hero .video-container {
+    height: 450px;
+    max-height: 450px;
+  }
+  .App .hero .video-container video {
+    height: 450px;
+    width: auto;
+  }
+  .App .hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
   .App .hero .container .description {
     font-size: 32px;
@@ -594,6 +610,9 @@ footer.footer .copyright .container p {
   .App .manifesto .container .signature {
     font-family: "Painted Brush";
     font-size: 42px;
+  }
+  .App #banner {
+    height: inherit;
   }
   .App .services > .container > .title {
     font-size: 38px;
@@ -646,6 +665,25 @@ footer.footer .copyright .container p {
   }
   .App .services .skills .skill .txt-container .description em {
     font-weight: 400;
+  }
+  .App #realisations .container .title {
+    font-size: 38px;
+    font-weight: 500;
+  }
+  .App #realisations .container .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .App #realisations .container .items .item {
+    max-height: 450px;
+    max-width: 250px;
+    margin-bottom: 30px;
+  }
+  .App #realisations .container .items .item img {
+    height: auto;
+    width: 100%;
   }
   .App .playlist {
     width: 100%;
