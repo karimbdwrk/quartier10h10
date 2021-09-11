@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 // import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from "swiper/swiper-react";
 
 // Import Swiper styles
-import 'swiper/css';
+// import 'swiper/css';
 
 class Realisations extends React.Component {
     constructor(props) {
@@ -50,30 +50,20 @@ class Realisations extends React.Component {
     render() { 
         console.log()
         return (
-            <div id="realisations" className="container">
-                <h2>{this.state.title}</h2>
-                {/* <OwlCarousel className='owl-theme' margin={10} >
-                    {this.state.images.map((image) => {
-                        console.log(image)
-                        return (
-                            <div key={image.id} className='item'>
-                                <img src={image.url} />
-                            </div>
-                        )
-                    })}
-                </OwlCarousel> */}
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                </Swiper>
-
+            <div id="realisations" className="realisations">
+                <div className="container">
+                    <h2 className="title">{this.state.title}</h2>
+                    <div className="items">
+                        {this.state.images.map((image) => {
+                            console.log(image)
+                            return (
+                                <div key={image.id} className='item'>
+                                    <img src={image.url} />
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
         );
     }

@@ -66,10 +66,10 @@ class Contact extends React.Component {
                                     <p className="at">chez {this.state.at}</p>
                                     <Markdown className="address">{this.state.address}</Markdown>
                                 </div>
-                                <div>
+                                {/* <div>
                                     {telephone}
                                     <p className="email">{this.state.email}</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -71,17 +71,17 @@ const ContactForm = () => (
       {({ isSubmitting }) => (
         <Form id="contactForm">
             <div className="inputs">
-                <div><Field name="name" placeholder="Name *" /></div>
+                <div><Field name="name" placeholder="Nom complet *" /></div>
                 <div><Field name="email" placeholder="Email *" type="email" /></div>
             </div>
             <div className="sujet">
-                <Field name="subject" placeholder="Subject *" />
+                <Field name="subject" placeholder="Objet *" />
             </div>
             <div className="textarea">
-                <Field name="message" placeholder="Message *" as="textarea" />
+                <Field name="message" placeholder="Un projet, une question? Nous revenons vers vous dans les meilleurs délais. *" as="textarea" />
             </div>
             <button type="submit" disabled={isSubmitting ? 'disabled' : ''}>
-                Submit
+                Envoyer
             </button>
         </Form>
       )}

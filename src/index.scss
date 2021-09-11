@@ -214,7 +214,7 @@ body {
 
         .skills {
             padding: 30px 0;
-            height: 100vh;
+            // height: 100vh;
             width: 100%;
     
             .skill {
@@ -273,13 +273,45 @@ body {
 
     }
 
+    #realisations {
+        padding: 90px 0 180px;
+        // height: 50vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
+        .container {
+
+            .title {
+                font-size: 72px;
+                margin-bottom: 90px;
+                width: 100%;
+                font-weight: 500;
+            }
+            .items {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                .item {
+                    max-height: 450px;
+                    max-width: 250px;
+    
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
 
     .playlist {
         width: 100%;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        height: 75vh;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        // height: 75vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -301,7 +333,7 @@ body {
                     }
         
                     .description {
-                        font-size: 22px;
+                        font-size: 26px;
                         width: 80%;
                         font-weight: 200;
 
@@ -336,7 +368,7 @@ body {
     }
 
     .contact {
-        padding-top: 30px;
+        padding-top: 90px;
         padding-bottom: 30px;
         height: 70vh;
         width: 100%;
@@ -387,6 +419,10 @@ body {
                         .sujet {
                             width: 100%;
                             margin-bottom: 15px;
+
+                            input {
+                                width: 100%;
+                            }
 
                             & > div {
                                 width: 100%;
@@ -454,7 +490,7 @@ body {
                         }
                         .at {
                             font-style: italic;
-                            margin-bottom: 15px;
+                            margin-top: 15px;
                         }
                         .address {
                             font-size: 18px;
