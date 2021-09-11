@@ -9,14 +9,14 @@
 }
 
 body {
-  background-color: #101010;
+  background-color: #000;
   padding: 0;
   margin: 0;
 }
 
 /* END GENERAL */
 .App {
-  background-color: #101010;
+  background-color: #000;
   color: #F7F7F7;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -54,19 +54,37 @@ body {
   border-bottom: 1px solid transparent;
   color: #F7F7F7;
   text-decoration: none;
+  cursor: pointer;
 }
 .App header .container .nav a:hover {
   border-bottom: 1px solid #F7F7F7;
 }
 .App .hero {
   padding: 25vh 0;
-  height: 50vh;
   display: flex;
   justify-content: center;
+}
+.App .hero .video-container {
+  position: absolute;
+  top: 150px;
+  max-height: 650px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .hero .video-container video {
+  width: 100%;
+  height: auto;
+  filter: blur(10px);
+}
+.App .hero .container {
+  z-index: 9;
 }
 .App .hero .container .description {
   font-size: 64px;
   font-weight: 300;
+  margin: 0;
 }
 .App .hero .container .description p {
   margin-top: 0;
@@ -81,7 +99,7 @@ body {
 }
 .App .manifesto {
   padding: 30px 0;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
 }
@@ -91,7 +109,7 @@ body {
   font-weight: 500;
 }
 .App .manifesto .container .description p {
-  font-size: 24px;
+  font-size: 32px;
   margin: 0;
   font-weight: 200;
 }
@@ -105,6 +123,20 @@ body {
   font-family: "Painted Brush";
   font-size: 72px;
 }
+.App #banner {
+  padding: 30px 0;
+  margin-bottom: 50px;
+  height: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.App #banner img {
+  width: 100%;
+  height: auto;
+}
 .App .services {
   display: flex;
   justify-content: center;
@@ -116,7 +148,7 @@ body {
   font-weight: 500;
 }
 .App .services > .container > .description {
-  font-size: 22px;
+  font-size: 32px;
   margin-bottom: 70px;
   font-weight: 200;
 }
@@ -271,7 +303,7 @@ body {
   width: 100%;
   margin-bottom: 15px;
 }
-.App .contact .container > div .contact-form form .sujet input {
+.App .contact .container > div .contact-form form .sujet > div {
   width: 100%;
 }
 .App .contact .container > div .contact-form form > div {

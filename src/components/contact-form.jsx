@@ -5,7 +5,7 @@ import { Formik, Field, Form } from 'formik';
 // import { fetchAPI } from '../utils/api'
 import * as yup from 'yup'
 
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

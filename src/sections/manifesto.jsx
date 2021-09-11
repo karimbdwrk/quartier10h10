@@ -49,7 +49,7 @@ class Manifesto extends React.Component {
               <div id="manifesto" className="manifesto">
                 <div className="container">
                     <h2 className="title">{this.state.title}</h2>
-                    <Markdown className="description">{this.state.description}</Markdown>
+                    <Markdown options={{ wrapper: 'div', forceWrapper: true  }} className="description">{this.state.description}</Markdown>
                     <p className="signature">{this.state.signature}</p>
                 </div>
               </div>

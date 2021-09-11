@@ -6,7 +6,8 @@ class Hero extends React.Component {
       super(props);
       this.state = {
         error: null,
-        description: ''
+        description: '',
+        videoUrl: ''
       };
     }
   
@@ -17,7 +18,8 @@ class Hero extends React.Component {
           (result) => {
             this.setState({
               isLoaded: true,
-              description: result.description
+              description: result.description,
+              videoUrl: result.video.url
             });
 
           },
@@ -43,6 +45,11 @@ class Hero extends React.Component {
         } else {
             return (
               <div className="hero">
+                <div className="video-container">
+                  <video muted autoPlay loop>
+                      <source src={this.state.videoUrl} type="video/mp4" />
+                  </video>
+                </div>
                 <div className="container">
                   <Markdown className="description">{this.state.description}</Markdown>
                   {/* <p className="description">{this.state.description}</p> */}
