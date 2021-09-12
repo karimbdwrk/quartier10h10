@@ -407,49 +407,39 @@ body {
 footer.footer {
   padding-top: 30px;
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 footer.footer > .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-footer.footer > .container > div img.footer-logo {
-  height: 50px;
-  width: auto;
+footer.footer > .container .logo {
+  width: 10%;
+  overflow: hidden;
 }
-footer.footer > .container nav .footer-column .title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
-footer.footer > .container nav .footer-column ul li {
-  margin-bottom: 15px;
-}
-footer.footer > .container .reseaux-sociaux .title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
-footer.footer > .container .reseaux-sociaux ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-footer.footer > .container .reseaux-sociaux ul li img {
-  height: 20px;
-  width: auto;
-}
-footer.footer .copyright {
+footer.footer > .container .logo img {
+  height: auto;
   width: 100%;
 }
-footer.footer .copyright .container {
+footer.footer > .container .legal {
+  width: 80%;
   display: flex;
-  justify-content: flex-end;
-  margin-top: 50px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
-footer.footer .copyright .container p {
-  font-size: 14px;
-  font-weight: 300;
+footer.footer > .container .social-links {
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+footer.footer > .container .social-links a img {
+  max-height: 35px;
 }
 
 @media screen and (max-width: 425px) {

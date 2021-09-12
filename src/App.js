@@ -1,10 +1,16 @@
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Confidentialite from './pages/confidentialite'
+import Rgpd from './pages/rgpd'
+import Legal from './pages/legal'
+import Home from './pages/home'
 import Header from './global/header'
-import Hero from './sections/hero'
-import Manifesto from './sections/manifesto'
-import Services from './sections/services'
-import Realisations from './sections/realisations'
-import Playlist from './sections/playlist'
-import Contact from './sections/contact'
+import Footer from './global/footer'
 import logo from './logo.svg';
 
 import './App.css';
@@ -12,16 +18,16 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <Manifesto />
-      <div id="banner">
-        <img src="https://quartier10h10.s3.eu-west-3.amazonaws.com/photo_1543332164_6e82f355badc_16e4ebb7a4.jpg" />
-      </div>
-      <Services />
-      <Realisations />
-      <Playlist />
-      <Contact />
+      <Router>
+        <Header />
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/mentions-legales" exact component={Legal} />
+            <Route path="/confidentialite" exact component={Confidentialite} />
+            <Route path="/rgpd" exact component={Rgpd} />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

@@ -1,24 +1,24 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 function handleClick(e) {
     e.preventDefault();
     console.log('Le lien a été cliqué.')
 }
 
-class Header extends React.Component {
+class Footer extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         error: null,
         logo: '',
-        navigation: [],
-        toggleOpen: false
+        socials: [],
+        legalLinks: []
       };
 
       // Cette liaison est nécéssaire afin de permettre
@@ -33,14 +33,15 @@ class Header extends React.Component {
     }
   
     componentDidMount() {
-      fetch("https://quartier10h10-admin.herokuapp.com/header")
+      fetch("https://quartier10h10-admin.herokuapp.com/footer")
         .then(res => res.json())
         .then(
           (result) => {
             this.setState({
               isLoaded: true,
-              logo: result.Logo.url,
-              navigation: result.Navigation
+              logo: result.logo.url,
+              socials: result.social.socialLink,
+              legalLinks: result.legal.link
             });
 
           },
@@ -66,30 +67,26 @@ class Header extends React.Component {
             return <div>Chargement…</div>;
         } else {
             return (
-                <header>
+                <footer className="footer">
                   <div className="container">
                     <div className="logo">
-                        <Link to="/"><img src={this.state.logo} /></Link>
-                        <button id="burger" onClick={this.handleClick} className={this.state.toggleOpen ? 'open' : ''}>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </button>
+                        <img src={this.state.logo} />
                     </div>
-                    <nav className={this.state.toggleOpen ? 'nav open' : 'nav'}>
-                        { this.state.navigation.Nav_Link.map((navlink, index) => {
-                        return (
-                              <Link key={index} to={navlink.Link} spy={true} smooth={true}>{navlink.Title}</Link>
-                            )
-                        }) 
-                        }
-                    </nav>
+                    <div className="legal">
+                        {this.state.legalLinks.map((link) => (
+                            <Link to={link.Link}>{link.Title}</Link>
+                        ))}
+                    </div>
+                    <div className="social-links">
+                        {this.state.socials.map((social) => (
+                            <a href={social.Link} target="_blank"><img src={social.icon.url} /></a>
+                        ))}
+                    </div>
                   </div>
-                </header>
+                </footer>
             )
         }
     }
 }
 
-export default Header
+export default Footer
