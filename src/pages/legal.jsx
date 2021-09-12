@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx'
 
 class Legal extends React.Component {
     constructor(props) {
@@ -40,11 +41,11 @@ class Legal extends React.Component {
     
 
     render() { 
-        console.log()
         return (
-            <div id="legal" className="legal">
+            <div id="legal" className="mentions-legales fadeIn">
                 <div className="container">
                     <h2 className="title">{this.state.title}</h2>
+                    <Markdown className="content">{this.state.content}</Markdown>
                 </div>
             </div>
         );

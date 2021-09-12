@@ -43,7 +43,7 @@ class Manifesto extends React.Component {
         if (error) {
             return <div>Erreur : {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Chargement…</div>;
+            return <div> </div>;
         } else {
             return (
               <div id="manifesto" className="manifesto">

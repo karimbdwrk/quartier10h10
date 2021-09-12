@@ -3,15 +3,50 @@
 }
 
 /* GENERAL */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+}
+
 .container {
   max-width: 1400px;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 body {
   background-color: #000;
   padding: 0;
   margin: 0;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader img {
+  max-height: 250px;
 }
 
 /* END GENERAL */
@@ -404,6 +439,26 @@ body {
   text-decoration: underline;
 }
 
+.confidentialite, .mentions-legales, .rgpd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 90px 0;
+}
+.confidentialite .title, .mentions-legales .title, .rgpd .title {
+  font-size: 72px;
+  margin-bottom: 90px;
+  width: 100%;
+  font-weight: 500;
+}
+.confidentialite .content, .mentions-legales .content, .rgpd .content {
+  font-size: 18px;
+}
+.confidentialite .content a, .mentions-legales .content a, .rgpd .content a {
+  color: #FFF;
+}
+
 footer.footer {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -430,6 +485,13 @@ footer.footer > .container .legal {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+footer.footer > .container .legal a {
+  color: #FFF;
+  text-decoration: none;
+}
+footer.footer > .container .legal a:hover {
+  text-decoration: underline;
 }
 footer.footer > .container .social-links {
   width: 10%;
@@ -538,26 +600,31 @@ footer.footer > .container .social-links a img {
     left: 50%;
   }
   .App header .container .nav {
-    width: 100%;
+    width: 100vw;
     max-width: 800px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-around;
-    transform: translateY(-30px);
     opacity: 0;
     transition: 250ms ease-in-out;
+    background-color: #000;
+    z-index: 999;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    padding: 15px;
   }
   .App header .container .nav.open {
     transform: translateY(0px);
     opacity: 1;
   }
   .App header .container .nav a {
-    vertical-align: bottom;
-    font-size: 18px;
+    font-size: 22px;
     border-bottom: 0px solid transparent;
     color: #F7F7F7;
     text-decoration: none;
+    margin-bottom: 15px;
   }
   .App header .container .nav a:hover {
     border-bottom: 0px solid #F7F7F7;
@@ -569,6 +636,7 @@ footer.footer > .container .social-links a img {
   .App .hero .video-container {
     height: 450px;
     max-height: 450px;
+    overflow-x: hidden;
   }
   .App .hero .video-container video {
     height: 450px;
@@ -613,7 +681,6 @@ footer.footer > .container .social-links a img {
   }
   .App .services .skills {
     padding: 30px 0;
-    height: 100vh;
     width: 100%;
   }
   .App .services .skills .skill {
@@ -726,7 +793,6 @@ footer.footer > .container .social-links a img {
   .App .contact {
     padding-top: 30px;
     padding-bottom: 30px;
-    height: 70vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -848,5 +914,51 @@ footer.footer > .container .social-links a img {
     margin-top: 18px;
     font-size: 18px;
     text-decoration: underline;
+  }
+  .App .confidentialite, .App .mentions-legales, .App .rgpd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 0;
+  }
+  .App .confidentialite .title, .App .mentions-legales .title, .App .rgpd .title {
+    font-size: 38px;
+    margin-bottom: 30px;
+    width: 100%;
+    font-weight: 500;
+  }
+  .App .confidentialite .content, .App .mentions-legales .content, .App .rgpd .content {
+    font-size: 16px;
+  }
+  .App .confidentialite .content a, .App .mentions-legales .content a, .App .rgpd .content a {
+    color: #FFF;
+  }
+  .App footer.footer {
+    padding-top: 90px;
+  }
+  .App footer.footer .container {
+    flex-direction: column;
+  }
+  .App footer.footer .container .logo {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .App footer.footer .container .logo img {
+    max-width: 120px;
+  }
+  .App footer.footer .container .legal {
+    margin-bottom: 30px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .App footer.footer .container .legal a {
+    margin-bottom: 15px;
+    color: #FFF;
+  }
+  .App footer.footer .container .social-links {
+    margin-bottom: 30px;
+    width: 100%;
   }
 }

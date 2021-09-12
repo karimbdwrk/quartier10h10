@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx'
 
 class Realisations extends React.Component {
     constructor(props) {
@@ -42,9 +43,10 @@ class Realisations extends React.Component {
     render() { 
         console.log()
         return (
-            <div id="rgpd" className="rgpd">
+            <div id="rgpd" className="rgpd fadeIn">
                 <div className="container">
                     <h2 className="title">{this.state.title}</h2>
+                    <Markdown className="content">{this.state.content}</Markdown>
                 </div>
             </div>
         );

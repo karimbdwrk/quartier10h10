@@ -41,10 +41,13 @@ class Hero extends React.Component {
         if (error) {
             return <div>Erreur : {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Chargement…</div>;
+            return  (
+              <div class="loader fadeIn">
+                <img src="https://strapi-quartier-bucket.s3.eu-west-3.amazonaws.com/logo_quartier10h10_fd04f298b4.svg" />
+              </div>);
         } else {
             return (
-              <div className="hero">
+              <div className="hero fadeIn">
                 <div className="video-container">
                   <video muted autoPlay loop>
                       <source src={this.state.videoUrl} type="video/mp4" />

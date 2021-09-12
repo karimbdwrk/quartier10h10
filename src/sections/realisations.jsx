@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx'
 // import ReactDOM from 'react-dom'
 // import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.css';
