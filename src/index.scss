@@ -746,7 +746,7 @@ footer.footer {
                 }
         
                 .nav {
-                    width: 100vw;
+                    width: calc(100vw - 30px);
                     max-width: 800px;
                     display: flex;
                     flex-direction: column;
@@ -794,10 +794,10 @@ footer.footer {
                 max-height: 450px;
                 overflow-x: hidden;
 
-                video {
-                    height: 450px;
-                    width: auto;
-                }
+                // video {
+                //     height: 450px;
+                //     width: auto;
+                // }
             }
     
             .container {

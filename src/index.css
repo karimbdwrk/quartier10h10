@@ -600,7 +600,7 @@ footer.footer > .container .social-links a img {
     left: 50%;
   }
   .App header .container .nav {
-    width: 100vw;
+    width: calc(100vw - 30px);
     max-width: 800px;
     display: flex;
     flex-direction: column;
@@ -637,10 +637,6 @@ footer.footer > .container .social-links a img {
     height: 450px;
     max-height: 450px;
     overflow-x: hidden;
-  }
-  .App .hero .video-container video {
-    height: 450px;
-    width: auto;
   }
   .App .hero .container {
     display: flex;
