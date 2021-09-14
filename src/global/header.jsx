@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll'
 
 function handleClick(e) {
     e.preventDefault();
@@ -83,7 +84,7 @@ class Header extends React.Component {
                     <nav className={this.state.toggleOpen ? 'nav open' : 'nav'}>
                         { this.state.navigation.Nav_Link.map((navlink, index) => {
                         return (
-                              <Link key={index} to={navlink.Link} spy={true} smooth={true}>{navlink.Title}</Link>
+                              <ScrollLink key={index} to={navlink.Link} spy={true} smooth={true} className="hvr-underline-from-left">{navlink.Title}</ScrollLink>
                             )
                         }) 
                         }

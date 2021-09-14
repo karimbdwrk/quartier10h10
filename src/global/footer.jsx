@@ -74,7 +74,7 @@ class Footer extends React.Component {
                     </div>
                     <div className="legal">
                         {this.state.legalLinks.map((link) => (
-                            <Link to={link.Link}>{link.Title}</Link>
+                            <Link to={link.Link} className="hvr-underline-from-left">{link.Title}</Link>
                         ))}
                     </div>
                     <div className="social-links">
@@ -82,6 +82,9 @@ class Footer extends React.Component {
                             <a href={social.Link} target="_blank"><img src={social.icon.url} /></a>
                         ))}
                     </div>
+                  </div>
+                  <div className="container">
+                      <p className="copyright">© quartier10h10.com - 2021</p>
                   </div>
                 </footer>
             )

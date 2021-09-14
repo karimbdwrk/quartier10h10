@@ -49,7 +49,7 @@ class Hero extends React.Component {
             return (
               <div className="hero fadeIn">
                 <div className="video-container">
-                  <video muted autoPlay loop>
+                  <video playsInline autoPlay muted loop>
                       <source src={this.state.videoUrl} type="video/mp4" />
                   </video>
                 </div>

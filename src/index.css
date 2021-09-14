@@ -3,6 +3,12 @@
 }
 
 /* GENERAL */
+@font-face {
+  font-family: "Painted Brush";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Painted Brush"), url("./fonts/PaintedBrush.woff2") format("woff2");
+}
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -25,6 +31,38 @@
   animation-duration: 1000ms;
 }
 
+/* Underline From Left */
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #FFF;
+  height: 2px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+  right: 0;
+}
+
 .container {
   max-width: 1400px;
   width: 100%;
@@ -32,10 +70,16 @@
   padding-right: 15px;
 }
 
+@media screen and (max-width: 1500px) {
+  .App {
+    padding: 0 30px;
+  }
+}
 body {
   background-color: #000;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .loader {
@@ -81,7 +125,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .App header .container .nav a {
   vertical-align: bottom;
@@ -90,9 +134,7 @@ body {
   color: #F7F7F7;
   text-decoration: none;
   cursor: pointer;
-}
-.App header .container .nav a:hover {
-  border-bottom: 1px solid #F7F7F7;
+  padding-bottom: 5px;
 }
 .App .hero {
   padding: 25vh 0;
@@ -107,6 +149,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 .App .hero .video-container video {
   width: 100%;
@@ -143,7 +186,8 @@ body {
   font-weight: 500;
 }
 .App .manifesto .container .description p {
-  font-size: 32px;
+  font-size: 28px;
+  width: 90%;
   margin: 0;
   font-weight: 200;
 }
@@ -157,6 +201,7 @@ body {
   font-family: "Painted Brush";
   font-size: 72px;
   margin-bottom: 0;
+  display: none;
 }
 .App #banner {
   padding: 30px 0;
@@ -184,9 +229,10 @@ body {
   font-weight: 500;
 }
 .App .services > .container > .description {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 70px;
   font-weight: 200;
+  width: 90%;
 }
 .App .services > .container > .description p {
   margin: 0;
@@ -208,10 +254,13 @@ body {
 }
 .App .services .skills .skill .icon-container {
   width: 20%;
+  display: flex;
+  justify-content: flex-end;
 }
 .App .services .skills .skill .icon-container img.icon {
   max-height: 140px;
   width: auto;
+  margin-right: 15px;
 }
 .App .services .skills .skill .txt-container {
   width: 80%;
@@ -281,7 +330,7 @@ body {
   flex-direction: row;
 }
 .App .playlist .container div.txt {
-  width: 66%;
+  width: 55%;
 }
 .App .playlist .container div.txt .title {
   font-size: 72px;
@@ -292,7 +341,7 @@ body {
 }
 .App .playlist .container div.txt .description {
   font-size: 26px;
-  width: 80%;
+  width: 100%;
   font-weight: 200;
 }
 .App .playlist .container div.txt .description li {
@@ -312,7 +361,7 @@ body {
   font-weight: 400;
 }
 .App .playlist .container div.lecteur {
-  width: 34%;
+  width: 45%;
 }
 .App .contact {
   padding-top: 90px;
@@ -339,10 +388,10 @@ body {
   flex-direction: row;
 }
 .App .contact .container > div .contact-form {
-  width: 50%;
+  width: 60%;
 }
 .App .contact .container > div .contact-form form {
-  width: 80%;
+  width: 90%;
 }
 .App .contact .container > div .contact-form form .inputs {
   width: 100%;
@@ -352,9 +401,10 @@ body {
   background-color: transparent;
   border: 2px solid #F7F7F7;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   color: #F7F7F7;
   font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 .App .contact .container > div .contact-form form input:focus, .App .contact .container > div .contact-form form textarea:focus {
   outline: none;
@@ -378,6 +428,9 @@ body {
   flex-direction: column;
   margin-bottom: 15px;
 }
+.App .contact .container > div .contact-form form > div.textarea textarea {
+  min-height: 90px;
+}
 .App .contact .container > div .contact-form form > div > div {
   width: calc(50% - 5px);
   display: flex;
@@ -385,7 +438,7 @@ body {
 }
 .App .contact .container > div .contact-form form button {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   text-transform: uppercase;
   font-weight: 600;
   color: #F7F7F7;
@@ -393,14 +446,16 @@ body {
   border: 2px solid #F7F7F7;
   border-radius: 5px;
   letter-spacing: 1px;
+  transition: background-color 300ms ease;
 }
 .App .contact .container > div .contact-form form button:hover {
   cursor: pointer;
   background-color: #F7F7F7;
   color: #101010;
+  transition: background-color 300ms ease;
 }
 .App .contact .container > div .informations {
-  width: 50%;
+  width: 40%;
   padding-left: 30px;
   display: flex;
   flex-direction: row;
@@ -461,7 +516,7 @@ body {
 
 footer.footer {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -489,9 +544,7 @@ footer.footer > .container .legal {
 footer.footer > .container .legal a {
   color: #FFF;
   text-decoration: none;
-}
-footer.footer > .container .legal a:hover {
-  text-decoration: underline;
+  padding-bottom: 5px;
 }
 footer.footer > .container .social-links {
   width: 10%;
@@ -503,11 +556,17 @@ footer.footer > .container .social-links {
 footer.footer > .container .social-links a img {
   max-height: 35px;
 }
+footer.footer > .container .copyright {
+  margin-top: 30px;
+  width: 100%;
+  text-align: left;
+  color: #303030;
+}
 
 @media screen and (max-width: 425px) {
   .App {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .App header {
     display: flex;
@@ -632,11 +691,25 @@ footer.footer > .container .social-links a img {
   .App .hero {
     padding: 0;
     height: 50vh;
+    overflow: hidden;
   }
   .App .hero .video-container {
     height: 450px;
     max-height: 450px;
-    overflow-x: hidden;
+    width: 100vw;
+    overflow: hidden;
+    top: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-clip: border-box;
+    box-sizing: content-box;
+  }
+  .App .hero .video-container video {
+    overflow: hidden;
+    height: 100%;
+    width: auto;
+    position: absolute;
   }
   .App .hero .container {
     display: flex;
@@ -660,6 +733,7 @@ footer.footer > .container .social-links a img {
   }
   .App .manifesto .container .description p {
     font-size: 16px;
+    width: 100%;
   }
   .App .manifesto .container .signature {
     font-family: "Painted Brush";
@@ -667,6 +741,7 @@ footer.footer > .container .social-links a img {
   }
   .App #banner {
     height: inherit;
+    padding: 0;
   }
   .App .services > .container > .title {
     font-size: 38px;
@@ -684,15 +759,18 @@ footer.footer > .container .social-links a img {
     margin-bottom: 60px;
   }
   .App .services .skills .skill .icon-container {
-    width: 10%;
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
   }
   .App .services .skills .skill .icon-container img.icon {
     max-height: 50px;
     width: auto;
+    margin-right: 0px;
   }
   .App .services .skills .skill .txt-container {
-    width: 90%;
-    padding-left: 30px;
+    width: 85%;
+    padding-left: 15px;
   }
   .App .services .skills .skill .txt-container h3 {
     margin-top: 0;
@@ -719,9 +797,23 @@ footer.footer > .container .social-links a img {
   .App .services .skills .skill .txt-container .description em {
     font-weight: 400;
   }
+  .App #realisations {
+    width: inherit;
+    padding-top: 30px;
+    padding-bottom: 90px;
+  }
+  .App #realisations .container {
+    width: calc(100vw - 30px);
+    max-width: 100vw;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+  }
   .App #realisations .container .title {
     font-size: 38px;
     font-weight: 500;
+    margin-left: 15px;
   }
   .App #realisations .container .items {
     display: flex;
@@ -790,6 +882,7 @@ footer.footer > .container .social-links a img {
     padding-top: 30px;
     padding-bottom: 30px;
     width: 100%;
+    height: inherit;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -817,6 +910,10 @@ footer.footer > .container .social-links a img {
   }
   .App .contact .container > div .contact-form form .inputs {
     width: 100%;
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+  .App .contact .container > div .contact-form form .inputs input {
     margin-bottom: 15px;
   }
   .App .contact .container > div .contact-form form input, .App .contact .container > div .contact-form form textarea {
@@ -846,8 +943,11 @@ footer.footer > .container .social-links a img {
     flex-direction: column;
     margin-bottom: 15px;
   }
+  .App .contact .container > div .contact-form form > div.textarea textarea {
+    min-height: 150px;
+  }
   .App .contact .container > div .contact-form form > div > div {
-    width: calc(50% - 5px);
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -914,31 +1014,39 @@ footer.footer > .container .social-links a img {
   .App .confidentialite, .App .mentions-legales, .App .rgpd {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 30px 0;
   }
-  .App .confidentialite .title, .App .mentions-legales .title, .App .rgpd .title {
+  .App .confidentialite .container, .App .mentions-legales .container, .App .rgpd .container {
+    width: calc(100vw - 30px);
+  }
+  .App .confidentialite .container .title, .App .mentions-legales .container .title, .App .rgpd .container .title {
     font-size: 38px;
     margin-bottom: 30px;
     width: 100%;
     font-weight: 500;
   }
-  .App .confidentialite .content, .App .mentions-legales .content, .App .rgpd .content {
+  .App .confidentialite .container .content, .App .mentions-legales .container .content, .App .rgpd .container .content {
     font-size: 16px;
   }
-  .App .confidentialite .content a, .App .mentions-legales .content a, .App .rgpd .content a {
+  .App .confidentialite .container .content a, .App .mentions-legales .container .content a, .App .rgpd .container .content a {
     color: #FFF;
   }
   .App footer.footer {
     padding-top: 90px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .App footer.footer .container {
     flex-direction: column;
   }
   .App footer.footer .container .logo {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: flex;
   }
   .App footer.footer .container .logo img {
     max-width: 120px;
@@ -947,11 +1055,12 @@ footer.footer > .container .social-links a img {
     margin-bottom: 30px;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
   .App footer.footer .container .legal a {
     margin-bottom: 15px;
     color: #FFF;
+    text-align: center;
   }
   .App footer.footer .container .social-links {
     margin-bottom: 30px;
