@@ -54,7 +54,7 @@ class Hero extends React.Component {
                   </video>
                 </div>
                 <div className="container">
-                  <Markdown className="description">{this.state.description}</Markdown>
+                  <Markdown options={{ wrapper: 'h1', forceWrapper: true }} className="description">{this.state.description}</Markdown>
                   {/* <p className="description">{this.state.description}</p> */}
                 </div>
               </div>
