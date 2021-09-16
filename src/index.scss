@@ -156,6 +156,23 @@ body {
         }
     }
 
+    .nomatch {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 72px;
+
+            span {
+                font-weight: 400;
+                font-style: italic;
+            }
+        }
+    }
+
     .hero {
         padding: 25vh 0;
         // height: 50vh;
