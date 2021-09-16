@@ -165,10 +165,31 @@ body {
 
         h1 {
             font-size: 72px;
+            margin-top: 0;
 
             span {
                 font-weight: 400;
                 font-style: italic;
+            }
+        }
+
+        a {
+            padding: 10px 35px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #F7F7F7;
+            background-color: #101010;
+            border: 2px solid #F7F7F7;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transition: background-color 300ms ease;
+            text-decoration: none;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #F7F7F7;
+                color: #101010;
+                transition: background-color 300ms ease;
             }
         }
     }
@@ -192,7 +213,7 @@ body {
             video {
                 width: 100%;
                 height: auto;
-                filter: blur(10px);
+                // filter: blur(10px);
             }
         }
 
@@ -861,6 +882,36 @@ footer.footer {
         
                 }
     
+            }
+        }
+
+
+        .nomatch {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+
+            h1 {
+                font-size: 54px;
+                text-align: center;
+
+                span {
+                    font-size: 38px;
+                    font-weight: 400;
+                    font-style: italic;
+                    display: block;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            a {
+                margin-top: 30px;
             }
         }
 

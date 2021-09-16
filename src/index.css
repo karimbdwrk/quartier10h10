@@ -145,10 +145,29 @@ body {
 }
 .App .nomatch h1 {
   font-size: 72px;
+  margin-top: 0;
 }
 .App .nomatch h1 span {
   font-weight: 400;
   font-style: italic;
+}
+.App .nomatch a {
+  padding: 10px 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #F7F7F7;
+  background-color: #101010;
+  border: 2px solid #F7F7F7;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: background-color 300ms ease;
+  text-decoration: none;
+}
+.App .nomatch a:hover {
+  cursor: pointer;
+  background-color: #F7F7F7;
+  color: #101010;
+  transition: background-color 300ms ease;
 }
 .App .hero {
   padding: 25vh 0;
@@ -168,7 +187,6 @@ body {
 .App .hero .video-container video {
   width: 100%;
   height: auto;
-  filter: blur(10px);
 }
 .App .hero .container {
   z-index: 9;
@@ -701,6 +719,30 @@ footer.footer > .container .copyright {
   }
   .App header .container .nav a:hover {
     border-bottom: 0px solid #F7F7F7;
+  }
+  .App .nomatch {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+  .App .nomatch h1 {
+    font-size: 54px;
+    text-align: center;
+  }
+  .App .nomatch h1 span {
+    font-size: 38px;
+    font-weight: 400;
+    font-style: italic;
+    display: block;
+  }
+  .App .nomatch h1 span span {
+    display: none;
+  }
+  .App .nomatch a {
+    margin-top: 30px;
   }
   .App .hero {
     padding: 0;
